@@ -22,9 +22,6 @@ npm run dev
 
 Open the local URL printed by Vite. To create a production build, run `npm run build`. To check the code with ESLint, run `npm run lint`.
 
-## Developer
+## About me
 
-**Mithun Raj Sekar** is a master's student at Philipps University of Marburg, with a minor in Computer Science. He has experience in full-stack web development, including developing a digital health applications platform and working with Django, SQLite, and Microsoft Azure. His skills include React, JavaScript, Python, and SQL.
-
-- [GitHub](https://github.com/mithun10082002)
-- [LinkedIn](https://www.linkedin.com/in/mithunrajsekar)
+I'm **Mithun Raj Sekar**, a master's student at Philipps University of Marburg, with a minor in Computer Science. I have experience in full-stack web development, including developing a digital health applications platform and working with Django, SQLite, and Microsoft Azure. My skills include React, JavaScript, Python, and SQL.

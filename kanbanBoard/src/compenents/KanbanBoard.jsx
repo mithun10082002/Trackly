@@ -21,6 +21,24 @@ function KanbanBoard() {
   const [tasks, setTasks] = useState(initialTasks)
   const [draggedTaskId, setDraggedTaskId] = useState(null)
   const [activeColumn, setActiveColumn] = useState(null)
+  const [newTaskTitle, setNewTaskTitle] = useState('')
+
+  function handleAddTask(event) {
+    event.preventDefault()
+    const title = newTaskTitle.trim()
+
+    if (!title) return
+
+    setTasks((currentTasks) => {
+      const nextId = currentTasks.reduce(
+        (highestId, task) => Math.max(highestId, task.id),
+        0,
+      ) + 1
+
+      return [...currentTasks, { id: nextId, title, status: 'todo' }]
+    })
+    setNewTaskTitle('')
+  }
 
   function handleDrop(event, status) {
     event.preventDefault()
@@ -50,6 +68,17 @@ function KanbanBoard() {
         </div>
         <h1>Kanban Board</h1>
       </header>
+
+      <form className="task-entry" onSubmit={handleAddTask} aria-label="Add a task">
+        <input
+          type="text"
+          value={newTaskTitle}
+          onChange={(event) => setNewTaskTitle(event.target.value)}
+          placeholder="Enter a task..."
+          aria-label="Task name"
+        />
+        <button type="submit">Add task</button>
+      </form>
 
       <section className="board" aria-label="Task board">
         {columns.map((column) => {

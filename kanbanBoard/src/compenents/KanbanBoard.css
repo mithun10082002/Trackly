@@ -46,6 +46,57 @@
 .board-mark span:nth-child(2) { height: 15px; }
 .board-mark span:nth-child(3) { height: 7px; }
 
+.task-entry {
+  display: flex;
+  gap: 10px;
+  max-width: 1180px;
+  margin: 0 auto 18px;
+  animation: rise-in 500ms ease-out both;
+}
+
+.task-entry input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #333542;
+  border-radius: 8px;
+  outline: none;
+  color: #e7e9f2;
+  background: #1c1e27;
+  font-size: 13px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.task-entry input::placeholder {
+  color: #777a8b;
+}
+
+.task-entry input:focus {
+  border-color: #8174d6;
+  box-shadow: 0 0 0 3px rgba(129, 116, 214, 0.14);
+}
+
+.task-entry button {
+  padding: 0 18px;
+  border: 1px solid #9a8bea;
+  border-radius: 8px;
+  color: #17151f;
+  background: #a99bea;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.task-entry button:hover {
+  transform: translateY(-1px);
+  background: #b7acf0;
+}
+
+.task-entry button:active {
+  transform: translateY(0);
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

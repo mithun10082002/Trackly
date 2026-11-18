@@ -1,7 +1,7 @@
-import KanbanBoard from './compenents/KanbanBoard.jsx'
+import Trackly from './compenents/Trackly.jsx'
 
 function App() {
-  return <KanbanBoard />
+  return <Trackly />
 }
 
 export default App

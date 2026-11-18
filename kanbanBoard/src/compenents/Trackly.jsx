@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './KanbanBoard.css'
+import './Trackly.css'
 
 const columns = [
   { id: 'todo', title: 'Todo' },
@@ -8,16 +8,11 @@ const columns = [
 ]
 
 const initialTasks = [
-  { id: 1, title: 'Sketch project ideas', status: 'todo' },
-  { id: 2, title: 'Plan the next sprint', status: 'todo' },
-  { id: 3, title: 'Review design concepts', status: 'todo' },
-  { id: 4, title: 'Build the dashboard', status: 'progress' },
-  { id: 5, title: 'Update the components', status: 'progress' },
-  { id: 6, title: 'Set up the workspace', status: 'completed' },
-  { id: 7, title: 'Create the first wireframes', status: 'completed' },
+  { id: 1, title: 'Task 1', status: 'todo' },
+  { id: 2, title: 'Task 2', status: 'todo' },
 ]
 
-function KanbanBoard() {
+function Trackly() {
   const [tasks, setTasks] = useState(initialTasks)
   const [draggedTaskId, setDraggedTaskId] = useState(null)
   const [activeColumn, setActiveColumn] = useState(null)
@@ -70,7 +65,7 @@ function KanbanBoard() {
           <span />
           <span />
         </div>
-        <h1>Kanban Board</h1>
+        <h1>Trackly</h1>
       </header>
 
       <form className="task-entry" onSubmit={handleAddTask} aria-label="Add a task">
@@ -151,4 +146,4 @@ function KanbanBoard() {
   )
 }
 
-export default KanbanBoard
+export default Trackly

@@ -40,6 +40,10 @@ function KanbanBoard() {
     setNewTaskTitle('')
   }
 
+  function handleDeleteTask(taskId) {
+    setTasks((currentTasks) => currentTasks.filter((task) => task.id !== taskId))
+  }
+
   function handleDrop(event, status) {
     event.preventDefault()
     const taskId = Number(event.dataTransfer.getData('text/plain'))
@@ -123,7 +127,19 @@ function KanbanBoard() {
                     }}
                   >
                     <span className="task-grip" aria-hidden="true">⠿</span>
-                    <span>{task.title}</span>
+                    <span className="task-title">{task.title}</span>
+                    <button
+                      className="task-delete"
+                      type="button"
+                      aria-label={`Delete ${task.title}`}
+                      onClick={() => handleDeleteTask(task.id)}
+                      onDragStart={(event) => {
+                        event.preventDefault()
+                        event.stopPropagation()
+                      }}
+                    >
+                      ×
+                    </button>
                   </article>
                 ))}
               </div>
